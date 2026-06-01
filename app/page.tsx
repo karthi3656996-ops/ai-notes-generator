@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import ReactMarkdown from "react-markdown"
+import InteractiveBackground from "./components/InteractiveBackground"
 
 export default function Home() {
 
@@ -40,6 +41,7 @@ export default function Home() {
 
   return (
     <main className="container">
+      <InteractiveBackground />
       <header>
         <h1>AI Study Notes Generator</h1>
         <p className="subtitle">Transform your raw study materials into clean, organized notes instantly.</p>
@@ -107,14 +109,14 @@ export default function Home() {
 
       <footer className="footer" style={{ marginTop: '5rem', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.9rem', borderTop: '1px solid var(--glass-border)', paddingTop: '1.5rem' }}>
         <p style={{ margin: 0 }}>
-          Created by <span style={{ color: '#fff', fontWeight: '600', textShadow: '0 0 10px rgba(139, 92, 246, 0.3)' }}>Karthikeyan</span>
+          Created by <span style={{ color: '#fff', fontWeight: '600', textShadow: '0 0 10px rgba(255, 255, 255, 0.15)' }}>Karthikeyan</span>
         </p>
         <div style={{ marginTop: '0.5rem', display: 'flex', justifyContent: 'center', gap: '1rem', alignItems: 'center' }}>
-          <a href="https://www.linkedin.com/in/karthi-keyan-980103379" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)', textDecoration: 'none', transition: 'color 0.2s', fontWeight: '500' }} onMouseOver={(e)=>(e.currentTarget.style.color='#a78bfa')} onMouseOut={(e)=>(e.currentTarget.style.color='var(--accent-color)')}>
+          <a href="https://www.linkedin.com/in/karthi-keyan-980103379" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s', fontWeight: '500' }} onMouseOver={(e)=>(e.currentTarget.style.color='#ffffff')} onMouseOut={(e)=>(e.currentTarget.style.color='var(--text-secondary)')}>
             LinkedIn
           </a>
           <span style={{ color: 'var(--glass-border)' }}>|</span>
-          <a href="https://github.com/karthi3656996-ops" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)', textDecoration: 'none', transition: 'color 0.2s', fontWeight: '500' }} onMouseOver={(e)=>(e.currentTarget.style.color='#a78bfa')} onMouseOut={(e)=>(e.currentTarget.style.color='var(--accent-color)')}>
+          <a href="https://github.com/karthi3656996-ops" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--text-secondary)', textDecoration: 'none', transition: 'color 0.2s', fontWeight: '500' }} onMouseOver={(e)=>(e.currentTarget.style.color='#ffffff')} onMouseOut={(e)=>(e.currentTarget.style.color='var(--text-secondary)')}>
             GitHub
           </a>
         </div>
