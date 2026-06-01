@@ -106,7 +106,18 @@ export default function Home() {
       )}
 
       <footer className="footer" style={{ marginTop: '5rem', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.9rem', borderTop: '1px solid var(--glass-border)', paddingTop: '1.5rem' }}>
-        <p>Created by <span style={{ color: 'var(--accent-color)', fontWeight: '600', textShadow: '0 0 10px rgba(139, 92, 246, 0.3)' }}>Karthikeyan</span></p>
+        <p style={{ margin: 0 }}>
+          Created by <span style={{ color: '#fff', fontWeight: '600', textShadow: '0 0 10px rgba(139, 92, 246, 0.3)' }}>Karthikeyan</span>
+        </p>
+        <div style={{ marginTop: '0.5rem', display: 'flex', justifyContent: 'center', gap: '1rem', alignItems: 'center' }}>
+          <a href="https://www.linkedin.com/in/karthi-keyan-980103379" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)', textDecoration: 'none', transition: 'color 0.2s', fontWeight: '500' }} onMouseOver={(e)=>(e.currentTarget.style.color='#a78bfa')} onMouseOut={(e)=>(e.currentTarget.style.color='var(--accent-color)')}>
+            LinkedIn
+          </a>
+          <span style={{ color: 'var(--glass-border)' }}>|</span>
+          <a href="https://github.com/karthi3656996-ops" target="_blank" rel="noopener noreferrer" style={{ color: 'var(--accent-color)', textDecoration: 'none', transition: 'color 0.2s', fontWeight: '500' }} onMouseOver={(e)=>(e.currentTarget.style.color='#a78bfa')} onMouseOut={(e)=>(e.currentTarget.style.color='var(--accent-color)')}>
+            GitHub
+          </a>
+        </div>
       </footer>
     </main>
   )
