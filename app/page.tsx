@@ -104,6 +104,10 @@ export default function Home() {
           </div>
         </section>
       )}
+
+      <footer className="footer" style={{ marginTop: '5rem', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.9rem', borderTop: '1px solid var(--glass-border)', paddingTop: '1.5rem' }}>
+        <p>Created by <span style={{ color: 'var(--accent-color)', fontWeight: '600', textShadow: '0 0 10px rgba(139, 92, 246, 0.3)' }}>Karthikeyan</span></p>
+      </footer>
     </main>
   )
 }
