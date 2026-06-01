@@ -1,20 +1,41 @@
 "use client"
 
 import { useState } from "react"
+import ReactMarkdown from "react-markdown"
 
 export default function Home() {
 
   const [text, setText] = useState("")
   const [notes, setNotes] = useState("")
   const [isLoading, setIsLoading] = useState(false)
+  const [error, setError] = useState("")
 
-  const generateNotes = () => {
+  const generateNotes = async () => {
     setIsLoading(true)
-    // Simulate AI generation delay
-    setTimeout(() => {
-      setNotes("AI generated notes will appear here. This is a placeholder for the actual Gemini API response, structured with bullet points and key takeaways.")
+    setError("")
+    setNotes("")
+    try {
+      const response = await fetch("/api/generate", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ text }),
+      })
+
+      const data = await response.json()
+
+      if (!response.ok) {
+        throw new Error(data.error || "Failed to generate notes.")
+      }
+
+      setNotes(data.notes)
+    } catch (err: any) {
+      console.error(err)
+      setError(err.message || "An unexpected error occurred.")
+    } finally {
       setIsLoading(false)
-    }, 1500)
+    }
   }
 
   return (
@@ -52,6 +73,20 @@ export default function Home() {
         </button>
       </section>
 
+      {error && (
+        <section className="glass-panel error-container" style={{ borderColor: 'rgba(239, 68, 68, 0.4)', marginTop: '2rem' }}>
+          <h2 className="error-header" style={{ color: '#f87171', display: 'flex', alignItems: 'center', gap: '0.5rem', margin: 0, fontSize: '1.2rem' }}>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+              <circle cx="12" cy="12" r="10"></circle>
+              <line x1="12" y1="8" x2="12" y2="12"></line>
+              <line x1="12" y1="16" x2="12.01" y2="16"></line>
+            </svg>
+            Error
+          </h2>
+          <p style={{ marginTop: '0.5rem', color: '#cbd5e1', fontSize: '0.95rem' }}>{error}</p>
+        </section>
+      )}
+
       {notes && (
         <section className="glass-panel notes-container">
           <h2 className="notes-header">
@@ -65,7 +100,7 @@ export default function Home() {
             Generated Notes
           </h2>
           <div className="notes-content">
-            <p>{notes}</p>
+            <ReactMarkdown>{notes}</ReactMarkdown>
           </div>
         </section>
       )}

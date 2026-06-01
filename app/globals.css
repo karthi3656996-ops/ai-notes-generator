@@ -164,6 +164,54 @@ textarea::placeholder {
   font-size: 1.05rem;
 }
 
+.notes-content h1,
+.notes-content h2,
+.notes-content h3 {
+  color: #a78bfa;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.notes-content h1 { font-size: 1.5rem; }
+.notes-content h2 { font-size: 1.3rem; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.25rem; }
+.notes-content h3 { font-size: 1.1rem; }
+
+.notes-content p {
+  margin-bottom: 1rem;
+}
+
+.notes-content ul,
+.notes-content ol {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+}
+
+.notes-content ul {
+  list-style-type: disc;
+}
+
+.notes-content ol {
+  list-style-type: decimal;
+}
+
+.notes-content li {
+  margin-bottom: 0.5rem;
+}
+
+.notes-content strong {
+  color: #fff;
+  font-weight: 600;
+}
+
+.notes-content code {
+  background: rgba(255, 255, 255, 0.08);
+  padding: 0.2rem 0.4rem;
+  border-radius: 6px;
+  font-size: 0.9em;
+  font-family: monospace;
+}
+
 @keyframes fadeUp {
   to {
     opacity: 1;
